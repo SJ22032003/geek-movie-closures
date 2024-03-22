@@ -22,6 +22,9 @@ const debounce = (fn, delay) => {
 
 // Create function to fetch movies
 async function fetchMovies(page = 1) { // give example by not passing page || without pagination
+
+  window.scroll(0,0);
+
   // if search input is empty, return. It helps to limit the number of requests
   if (searchInput.value === "") return;
   const response = await fetch(`${BASE_URL}&s=${searchInput.value}&page=${page}`, {
